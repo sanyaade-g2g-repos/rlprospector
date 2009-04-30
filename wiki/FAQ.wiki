@@ -1,6 +1,4 @@
 #labels Featured
-#FAQ
-
 FAQ for prospector. Feel free to add any Fs, i will try to provide the As.
 
 
