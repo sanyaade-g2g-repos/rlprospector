@@ -3,5 +3,7 @@ FAQ for prospector. Feel free to add any Fs, i will try to provide the As.
 
 
 Q: What does a mining and laser drill do?
-
 A: Both add a bonus to damage vs walls. To damage walls use the Fire command.
+
+Q: What are cryo chambers good for?
+A: cryogenic chambers provide easy storage for people, just hire the additional crewmen to fill them.
