@@ -1,0 +1,9 @@
+#FAQ
+
+= Introduction =
+FAQ for prospector. Feel free to add any.
+
+= Details =
+
+Q: What does a mining and laser drill do?
+A: Both add a bonus to damage vs walls. To damage walls use the Fire command.
