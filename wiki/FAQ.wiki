@@ -1,6 +1,10 @@
 #labels Featured
 FAQ for prospector. Feel free to add any Fs, i will try to provide the As.
 
+Q: Why just windows? 
+
+A: No other machines here, so i can't compile linux or mac versions. however i can't see any reason why it shouldn't compile on a mac or linux system. So just get freebasic (http://www.freebasic.net/index.php/download) and compile the prospector.bas in your src directory. If you run into any problems let me know, and also please if you had success. I also wouldn't mind uploading precompiled linux & mac versions here if i had them.  
+
 
 Q: What does a mining and laser drill do?
 
