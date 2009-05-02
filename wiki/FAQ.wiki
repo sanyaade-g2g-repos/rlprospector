@@ -8,7 +8,7 @@ A: No other machines here, so i can't compile linux or mac versions. however i c
 
 Q: How do i equip stuff?
 
-A: Your awayteam always uses the best stuff it can have and redistributes it to the living when someone should die. 
+A: Your awayteam always uses the best equipment they can have and redistributes it to the living when someone should die. 
 
 
 Q: What does a mining and laser drill do?
@@ -24,3 +24,21 @@ A: cryogenic chambers provide easy storage for people, just hire the additional 
 Q: How do you get more air?
 
 A: Walk onto your ship.
+
+Q: How do i get biodata?
+
+A: (I)nspect plants and corpses. Not all plants and corpses yield results though
+
+Q: What are the commands for (R)adioing the ship
+
+A: One is "Hello" wich is answered with "Yes?" And more i will not tell you. Except that there are currently 7 (including the above). 
+
+Q: Any hints?
+
+A: Your communications satellite can do more than just relay messages. 2 Commands are a bit redundant, one is suicidal and the remaining too aren't too practical, though they can be fun.  
+
+Q: How can we contact you?
+
+A: comments, questions, ideas, feedback, bugreports, praise, criticism etc you can send to
+matthias.mennel@gmail.com
+There is also a considerable chance that if you found this thing on a forum that i will be hanging out there now and then, magellan is the nick.  
