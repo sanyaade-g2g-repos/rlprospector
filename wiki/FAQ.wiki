@@ -3,7 +3,7 @@ FAQ for prospector. Feel free to add any Fs, i will try to provide the As.
 
 Q: Why just windows? 
 
-A: No other machines here, so i can't compile linux or mac versions. however i can't see any reason why it shouldn't compile on a mac or linux system. So just get freebasic (http://www.freebasic.net/index.php/download) and compile prospector.bas in your src directory. If you run into any problems let me know, and also please if you had success. I also wouldn't mind uploading precompiled linux & mac versions here if i had them.  
+A: After trying to compile on linux we discovered that the sound library isn't working. unfortunately there also seems to be an input issue. So at this stage it is: you are of course welcome to try to compile it on linux. Can't guarantee it will work.   
 
 
 Q: How do i equip stuff?
