@@ -1,11 +1,6 @@
 #labels Featured
 FAQ for prospector. Feel free to add any Fs, i will try to provide the As.
 
-Q: Why just windows? 
-
-A: After trying to compile on linux we discovered that the sound library isn't working. unfortunately there also seems to be an input issue. So at this stage it is: you are of course welcome to try to compile it on linux. Can't guarantee it will work.   
-
-
 Q: How do i equip stuff?
 
 A: Your awayteam always uses the best equipment they can have and redistributes it to the living when someone should die. 
