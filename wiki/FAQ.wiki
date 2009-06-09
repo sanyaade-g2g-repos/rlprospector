@@ -32,6 +32,10 @@ Q: Any hints?
 
 A: Your communications satellite can do more than just relay messages. 2 Commands are a bit redundant, one is suicidal and the remaining too aren't too practical, though they can be fun.  
 
+Q: The stations don't let me dock and shoot at me! What shall i do!
+
+A: Kill some pirates until they like you again. Or try to find a pirate base. They might be friendly if they see you as a fellow pirate.
+
 Q: How can we contact you?
 
 A: comments, questions, ideas, feedback, bugreports, praise, criticism etc you can send to
