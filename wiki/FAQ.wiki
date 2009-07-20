@@ -26,11 +26,15 @@ A: (I)nspect plants and corpses. Not all plants and corpses yield results though
 
 Q: What are the commands for (R)adioing the ship
 
-A: One is "Hello" wich is answered with "Yes?" And more i will not tell you. Except that there are currently 7 (including the above). 
+A: One is "Hello" wich is answered with "Yes?" And more I will not tell you. Except that there are currently 10 (including the above). 
 
 Q: Any hints?
 
-A: Your communications satellite can do more than just relay messages. 2 Commands are a bit redundant, one is suicidal and the remaining too aren't too practical, though they can be fun.  
+A: Your communications satellite can do more than just relay messages. 2 Commands are a bit redundant, one is suicidal and the remaining too aren't too practical, though they can be fun. 
+
+Q: Anything else on radio commands? 
+
+A: There are 3 commands if you got a rover on the planet: rover start, rover stop and rover target. 
 
 Q: The stations don't let me dock and shoot at me! What shall i do!
 
