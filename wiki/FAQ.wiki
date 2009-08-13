@@ -36,7 +36,11 @@ Q: Anything else on radio commands?
 
 A: There are 3 commands if you got a rover on the planet: rover start, rover stop and rover target. 
 
-Q: The stations don't let me dock and shoot at me! What shall i do!
+Q: How do you deploy rovers?
+
+A: Just drop them when you are on a planet. Collect them later for the Map data. 
+
+Q: The stations don't let me dock and shoot at me! What shall i do?
 
 A: Kill some pirates until they like you again. Or try to find a pirate base. They might be friendly if they see you as a fellow pirate.
 
