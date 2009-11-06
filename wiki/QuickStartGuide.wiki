@@ -80,9 +80,9 @@ ship is lethal. Some common sights you will find on planets are:
 Pressing "i" will inspect any plants or dead creatures that your away team is standing on, giving you Bio data which you can sell at a Space Station. You
 can also press "I" to auto-inspect anything you step on, which is generally less of a hassle. Some other useful keys on the Planet Screen:
 
- x - Examine another tile. Very useful the first few times you play.
- f - Fire guns (after you press f, press a direction on the number pad to indicate the direction of fire.)
- c - Communicate with an creature.
+ * x - Examine another tile. Very useful the first few times you play.
+ * f - Fire guns (after you press f, press a direction on the number pad to indicate the direction of fire.)
+ * c - Communicate with an creature.
 
 To engage in close-combat with a creature, simply use the number pad to walk into their space. Be warned, however, that combat with a starting crew can
 be very dangerous.
@@ -93,23 +93,23 @@ CPGSD@X
 
 Not all letters will be there, and they may have different colors. What they mean is:
 
- C - Captain
- P - Pilot
- G - Gunner
- S - Science Officer
- D - Doctor
- @ - Security team
- X - Dead crew member.
+ * C - Captain
+ * P - Pilot
+ * G - Gunner
+ * S - Science Officer
+ * D - Doctor
+ * @ - Security team
+ * X - Dead crew member.
 
 If the letter is green, they are in good health. If it is yellow, they have been wounded. Xs, of course, are always red. Losing away team members has
 various effects.
 
-Dead captain - Game over
- Dead Pilot - Less chance of succeeding in space-based pilot test. No effect while on planet surface.
- Dead Gunner - Less damage in combat
- Dead S. Officer - No bio data from plants/corpses, unable to communicate with critters.
- Dead Doctor - No auto-healing
- Dead Security - No effect.
+ * Dead captain - Game over
+ * Dead Pilot - Less chance of succeeding in space-based pilot test. No effect while on planet surface.
+ * Dead Gunner - Less damage in combat
+ * Dead S. Officer - No bio data from plants/corpses, unable to communicate with critters.
+ * Dead Doctor - No auto-healing
+ * Dead Security - No effect.
 
 Below the crew status line, you can further details on the away team's combat ability: Armor, Firearms, and Melee. To take a more in-depth look at your
 crew, press "A". Press escape when you are done to return to the planet screen.
