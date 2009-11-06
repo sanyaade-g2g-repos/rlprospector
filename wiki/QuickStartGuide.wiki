@@ -120,23 +120,23 @@ When you are finished exploring the planet, return to your ship and press "l" to
 Occasionally, you will either attack or be attacked by ships or space creatures. When this happens, the Space Combat Screen appears. Some common things
 to see here are:
 
- @ - Your ship
- `*` - Plasma trail...very hot!
- F - Enemy fighter
- C - Enemy cruiser
+ * @ - Your ship
+ * `*` - Plasma trail...very hot!
+ * F - Enemy fighter
+ * C - Enemy cruiser
 
 Move around using the number pad. At some point, your gunner will inform you that he is ready to fire. Press "f" to fire, and use the number pad to
 choose your target if there is more than one in range. Destroying all enemy ships will automatically exit the Space Combat Screen, but if you want to
 escape your enemies, you will have to make it to one of the edges of the screen and press "r". Two other commands that are sometimes useful in the Space
 Combat Screen:
 
- d - Drop shields. This lets your send more power to your Engines for speedy get-aways
- a - Activate Sensors. This increases the area you can see, but makes it easier for the enemy to see you.
+ * d - Drop shields. This lets your send more power to your Engines for speedy get-aways
+ * a - Activate Sensors. This increases the area you can see, but makes it easier for the enemy to see you.
 
 == 7) Other ==
 
 Two more useful commands:
- q -- Quit. This ENDS your game
- S -- Save. This allows your to save the game to continue in the future.
+ * q -- Quit. This ENDS your game
+ * S -- Save. This allows your to save the game to continue in the future.
 This concludes the quickstart guide. There are more commands, and many many more things to do and find in the game, but this should be enough to get your
 on your feet. For more information, check the manual or press ? in game to get the full list of commands.
