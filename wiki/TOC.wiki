@@ -3,6 +3,6 @@
 
 == Table of contents ==
 
-  #[QuickStartGuide  Quick Start Guide]
+  #[QuickStartGuide ]
 
-  #[FAQ FAQ]
+  #[FAQ ]
