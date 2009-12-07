@@ -1,4 +1,4 @@
 == Prospector ==
 
-  # [QuickStartGuide]
-  # [FAQ]
+  [QuickStartGuide]
+  [FAQ]
