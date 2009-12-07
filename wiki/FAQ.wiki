@@ -1,51 +1,76 @@
 #labels Featured
 FAQ for prospector. Feel free to add any Fs, i will try to provide the As.
 
-Q: How do i equip stuff?
+== Basic howtos ==
 
-A: Your awayteam always uses the best equipment they can have and redistributes it to the living when someone should die. 
+*Q: What are the o o o thingies under my ship supposed to mean?*
 
+A: It's the systems map. You can see the star, o are planets. ░ asteroid fields. Once you decide to scan or land a cursor appears there that lets you chose the planet. You can also put the systems map in an alternate position on the bar in options.
 
-Q: What does a mining and laser drill do?
+*Q: How do I get money?*
 
-A: Both add a bonus to damage vs walls. To damage walls use the Fire command.
+A: Explore stuff, and then walk into the company office at a space station, and sell the stuff
 
-
-Q: What are cryo chambers good for?
-
-A: cryogenic chambers provide easy storage for people, just hire the additional crewmen to fill them.
-
-
-Q: How do you get more air?
+*Q: How do I get more air?*
 
 A: Walk onto your ship.
 
-Q: How do i get biodata?
+*Q: How do I get biodata?*
 
 A: (I)nspect plants and corpses. Not all plants and corpses yield results though
 
-Q: What are the commands for (R)adioing the ship
 
-A: One is "Hello" wich is answered with "Yes?" And more I will not tell you. Except that there are currently 10 (including the above). 
+== Items ==
 
-Q: Any hints?
+*Q: How do i equip stuff?*
 
-A: Your communications satellite can do more than just relay messages. 2 Commands are a bit redundant, one is suicidal and the remaining too aren't too practical, though they can be fun. 
+A: Your awayteam always uses the best equipment they can have and redistributes it to the living when someone should die. 
 
-Q: Anything else on radio commands? 
+*Q: What does a mining and laser drill do?*
 
-A: There are 3 commands if you got a rover on the planet: rover start, rover stop and rover target. 
+A: Both add a bonus to damage vs walls. To damage walls use the Fire command.
 
-Q: How do you deploy rovers?
+*Q: What are cryo chambers good for?*
+
+A: cryogenic chambers provide easy storage for people, just hire the additional crewmen to fill them.
+
+*Q: What do portable sensor sets do?*
+
+A: Increase viewing range on planets
+
+*Q: How do I deploy rovers?*
 
 A: Just drop them when you are on a planet. Collect them later for the Map data. 
 
-Q: The stations don't let me dock and shoot at me! What shall i do?
+*Q: I just bought 15 binoculars and 3 Helmet lamps and i still don't see any better*
+
+A: They don't stack, you only need one 
+
+*Q: I bought 3 Aux oxygen tanks and 2 aux jetpackfuel tanks, and i still only have 200 Oxygen/50 Jetpackfuel*
+
+A: They don't stack, you only need one 
+
+== Radio Commands ==
+*Q: What are the commands for (R)adioing the ship*
+
+A: One is "Hello" wich is answered with "Yes?" And more I will not tell you. Except that there are currently 10 (including the above). 
+
+*Q: Any hints?*
+
+A: Your communications satellite can do more than just relay messages. 2 Commands are a bit redundant, one is suicidal and the remaining too aren't too practical, though they can be fun. 
+
+*Q: Anything else on radio commands? *
+
+A: There are 3 commands if you got a rover on the planet: rover start, rover stop and rover target. 
+
+== Other things ==
+*Q: The stations don't let me dock and shoot at me! What shall i do?*
 
 A: Kill some pirates until they like you again. Or try to find a pirate base. They might be friendly if they see you as a fellow pirate.
 
-Q: How can we contact you?
+*Q: How can we contact you?*
 
 A: comments, questions, ideas, feedback, bugreports, praise, criticism etc you can send to
 matthias.mennel@gmail.com
+Prospectors very own forum is [http://prospector.freeforums.org/index.php]here
 There is also a considerable chance that if you found this thing on a forum that i will be hanging out there now and then, magellan is the nick.  
