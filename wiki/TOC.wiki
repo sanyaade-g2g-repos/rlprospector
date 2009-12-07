@@ -1,0 +1,7 @@
+#ToC
+
+= Prospector Wiki =
+
+*[Quickstartguide Quick Start Guide]
+
+*[FAQ FAQ]
