@@ -1,7 +1,4 @@
-#labels Featured
-= Prospector Wiki =
-
-== Table of contents ==
+== Prospector ==
 
   # [QuickStartGuide]
   # [FAQ]
