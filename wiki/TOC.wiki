@@ -1,6 +1,8 @@
+#labels Featured
 = Prospector Wiki =
 
-Table of contents
+== Table of contents ==
 
-#[QuickStartGuide  Quick Start Guide]
-#[FAQ FAQ]
+  #[QuickStartGuide  Quick Start Guide]
+
+  #[FAQ FAQ]
