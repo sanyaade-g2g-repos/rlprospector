@@ -1,7 +1,6 @@
-#ToC
-
 = Prospector Wiki =
 
-*[Quickstartguide Quick Start Guide]
+Table of contents
 
-*[FAQ FAQ]
+#[QuickStartGuide  Quick Start Guide]
+#[FAQ FAQ]
