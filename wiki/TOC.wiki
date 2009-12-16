@@ -1,7 +1,6 @@
 == Prospector ==
 
-  * [QuickStartGuide]
-  * [FAQ]
+<wiki:toc max_depth="3" />
 
 ----
 
