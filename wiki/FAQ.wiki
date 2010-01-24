@@ -26,6 +26,10 @@ A: (I)nspect plants and corpses. Not all plants and corpses yield results though
 
 A: Your awayteam always uses the best equipment they can have and redistributes it to the living when someone should die. 
 
+*Q: Why does that gun/armor/knife have a '*' in front of it?
+
+A: That item is tied to that crew member. Unless he is dead he grabs it before any normal Item distribution takes place. You can set and clear it in the A screen. Possible uses would be to give your best gun to the sharp shooter, or your weakest armor to the guy with the most hitpoints.
+
 *Q: What does a mining and laser drill do?*
 
 A: Both add a bonus to damage vs walls. To damage walls use the Fire command.
