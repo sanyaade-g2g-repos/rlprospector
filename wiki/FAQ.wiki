@@ -44,15 +44,15 @@ A: Just drop them when you are on a planet. Collect them later for the Map data.
 
 *Q: I just bought 15 binoculars and 3 Helmet lamps and i still don't see any better*
 
-A: They don't stack, you only need one 
-
-*Q: I bought 3 aux oxygen tanks /12 aux jetpackfuel tanks, and i still only have 200 Oxygen/50 Jetpackfuel*
-
-A: They don't stack, you only need one 
+A: They don't stack, you only need one  
 
 *Q: I bought a jetpack, yet i can't fly*
 
 A: You need one jetpack for every member of your awayteam. Hoverplattforms you need one for every 5 awayteam members
+
+*Q: I bought 3 aux oxygen tanks /12 aux jetpackfuel tanks, and i still only have 200 Oxygen/50 Jetpackfuel*
+
+A: As of 0.1.9 They do stack, but each crew member can only carry one. 
 
 == Radio Commands ==
 *Q: What are the commands for (R)adioing the ship*
