@@ -19,6 +19,12 @@ A: Walk onto your ship.
 
 A: (I)nspect plants and corpses. Not all plants and corpses yield results though
 
+== Planets ==
+
+*Q: I landed on this planet that is obviously bugged. Every tile is random and the crew speaks gibberish. Shall I report this bug?*
+
+A: In this case actually no. It's supposed to be this way. 
+All other bugs of course please do report! Fixing them is so much easier when you know where they are!
 
 == Items ==
 
