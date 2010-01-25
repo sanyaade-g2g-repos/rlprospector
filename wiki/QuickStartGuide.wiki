@@ -109,7 +109,7 @@ Not all letters will be there, and they may have different colors. What they mea
 If the letter is green, they are in good health. If it is yellow, they have been wounded. Xs, of course, are always red. Losing away team members has
 various effects.
 
- * Dead captain - Game over
+ * Dead captain - If you still make it back to the ship, he will get better. If everybody else dies too it is game over.
  * Dead Pilot - Less chance of succeeding in space-based pilot test. No effect while on planet surface.
  * Dead Gunner - Less damage in combat
  * Dead S. Officer - No bio data from plants/corpses, unable to communicate with critters.
