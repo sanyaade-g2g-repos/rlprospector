@@ -83,6 +83,10 @@ A: There are 3 commands if you got a rover on the planet: rover start, rover sto
 
 A: Kill some pirates until they like you again. Or try to find a pirate base. They might be friendly if they see you as a fellow pirate.
 
+*Q: What does start easy do?*
+
+A: If the start easy option is activated Pirates won't start any fleets for the first 100 turns, also monsters will have fewer hitpoints, their hitpoints will get divided by 500/turncount, letting them have their normal HPs by turn 500. 
+
 *Q: How can we contact you?*
 
 A: comments, questions, ideas, feedback, bugreports, praise, criticism etc you can send to
