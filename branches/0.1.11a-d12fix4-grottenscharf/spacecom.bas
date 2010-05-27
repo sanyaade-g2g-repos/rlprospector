@@ -102,44 +102,30 @@ function spacecombat(defender as _ship, byref atts as _fleet,ter as short) as _s
             tick(a)=0
         next
         player=defender
-        cls
         displayship(0)
         com_display(defender, attacker(),lastenemy,0,senac,e_track_p(),e_track_v(),e_last,mines_p(),mines_v(),mines_last)
-        dprint "Movement phase. Press appropriate keys to move, activate sensors or deactivate shields."
-        
-        
+   '
         for a=1 to 10
     
             if a>=tick(0) and speed(0)>0 and defender.hull>0 then 'playermovement
-                color 11,0
-                locate 6,63
-                print "Engine :"&player.engine &" ("&speed(0)&" MP)"
-                if defender.c.x=0 or defender.c.y=0 or defender.c.x=60 or defender.c.y=20 then dprint "Press "&key_ru &" to run and flee."
-                do
-                    key=keyin
-                    if getdirection(key)=0 and not instr("12346789"&key_ac &key_sh &key_ru &key_esc &key_dr &key_wait,key)>0 then key=""
-                
                     
-                    if key=key_esc then
-                        if askyn("Do you really want to end movement phase? (y/n)") then
-                            speed(0)=0
-                        else
-                            key=""
-                        endif
-                    endif
-                    if key=key_sh and defender.shieldmax>0 then
-                        if askyn ("Do you really want to shut down your shields? (y/n)") then
-                            defender.shield=0
-                            shieldshut=1
-                        else
-                            key=""
-                        endif
-                    endif
-                loop until key<>""
-                
+                color 11,0
+                draw string(62*_fw1,5*_fh2), "Engine :"&player.engine &" ("&speed(0) &" MP)",,Font2,custom,@_col
+    
+                if defender.c.x=0 or defender.c.y=0 or defender.c.x=60 or defender.c.y=20 then dprint "Press "&key_ru &" to run and flee."
+                key=keyin("1234678"&key_ac &key_sh &key_ru &key_esc &key_dr)
                 if key=key_ac then
                     if senac=2 then nexsen=1
                     if senac=1 then nexsen=2
+                endif
+                if key=key_esc then
+                    if askyn("Do you really want to end movement phase? (y/n)") then speed(0)=0
+                endif
+                if key=key_sh and defender.shieldmax>0 then 
+                    if askyn ("Do you really want to shut down your shields? (y/n)") then
+                        defender.shield=0
+                        shieldshut=1
+                    endif
                 endif
                 
                 if key=key_ru then 
@@ -156,7 +142,6 @@ function spacecombat(defender as _ship, byref atts as _fleet,ter as short) as _s
                 
                 old=defender.c
                 defender.c=movepoint(defender.c,getdirection(key))
-                if key=key_wait then defender.c=old
                 
                 if old.x<>defender.c.x or old.y<>defender.c.y then
                     e_last=e_last+1
@@ -183,11 +168,10 @@ function spacecombat(defender as _ship, byref atts as _fleet,ter as short) as _s
                         next
                     endif
                 endif      
-
-            tick(0)=tick(0)+tickr(0)
-            speed(0)=speed(0)-1
-            com_display(defender, attacker(),lastenemy,0,senac,e_track_p(),e_track_v(),e_last,mines_p(),mines_v(),mines_last)
-            
+                
+                tick(0)=tick(0)+tickr(0)
+                speed(0)=speed(0)-1
+                com_display(defender, attacker(),lastenemy,0,senac,e_track_p(),e_track_v(),e_last,mines_p(),mines_v(),mines_last)
             endif
             for b=1 to lastenemy 'enemymovement
                 if a>=tick(b)and speed(b)>0 then
@@ -273,10 +257,9 @@ function spacecombat(defender as _ship, byref atts as _fleet,ter as short) as _s
                                 attacker(t)=unload_s(attacker(t),10)
                                 lastenemy=com_remove(attacker(),t,lastenemy)
                                 t=0
-                                locEOL
-                                locate csrlin,pos+1
-                                no_key=cursor(defender.c,0,1)
+                                no_key=keyin
                             endif
+                            no_key=keyin()
                         endif
                     endif
                     if t>100 then com_detonatemine(t-100,mines_p(), mines_v() ,mines_last, defender , attacker() ,lastenemy)
@@ -337,9 +320,7 @@ function spacecombat(defender as _ship, byref atts as _fleet,ter as short) as _s
                         endif
                         if distance(attacker(b).c,defender.c)<=senbat*senac then 
                             dprint text,10
-                            locEOL
-                            locate csrlin,pos+1
-                            no_key=cursor(defender.c,0,1)
+                            no_key=keyin
                         endif
                     endif
                 next
@@ -353,9 +334,7 @@ function spacecombat(defender as _ship, byref atts as _fleet,ter as short) as _s
                     endif
                     if defender.hull<=0 then text=text &defender.desig &" destroyed!"                        
                     dprint text,12
-                    locEOL
-                    locate csrlin,pos+1
-                    no_key=cursor(defender.c,0,1)
+                    no_key=keyin
                 endif
                 
                 if mines_last>0 then
@@ -420,9 +399,6 @@ function spacecombat(defender as _ship, byref atts as _fleet,ter as short) as _s
                         attacker(a).c.y=rnd_range(1,20)
                         attacker(a).target.y=rnd_range(1,20)
                     endif
-                    locEOL
-                    locate csrlin,pos+1
-                    no_key=cursor(defender.c,0,1)
                 endif
             endif
         next
@@ -474,18 +450,18 @@ function com_display(defender as _ship, attacker() as _ship, lastenemy as short,
                 p1.x=x
                 p1.y=y
                 locate y+1,x+1
-                print " "
+                draw string(x*_fw1,y*_fh1)," ",,font1,custom,@_col
                 if distance(p1,defender.c)<=senbat*senac then
                     locate y+1,x+1
                     if distance(p1,defender.c)<=senbat*senac then color 8,0
                     if distance(p1,defender.c)<=senbat1*senac then color 7,0
                     if distance(p1,defender.c)<=senbat2*senac then color 15,0
-                    if combatmap(x,y)=0 then print "."
-                    if combatmap(x,y)=1 or combatmap(x,y)=6 then print "o"
+                    if combatmap(x,y)=0 then draw string(x*_fw1,y*_fh1),".",,font1,custom,@_col
+                    if combatmap(x,y)=1 or combatmap(x,y)=6 then draw string(x*_fw1,y*_fh1),chr(183),,font1,custom,@_col
                     if (combatmap(x,y)>1 and combatmap(x,y)<6) or combatmap(x,y)=7 then
                         color rnd_range(48,59),0
                         if combatmap(x,y)=7 then color rnd_range(186,210),0
-                        print chr(176)
+                        draw string(x*_fw1,y*_fh1), chr(176),,font1,custom,@_col
                     endif
                 endif
             endif
@@ -498,8 +474,8 @@ function com_display(defender as _ship, attacker() as _ship, lastenemy as short,
         if e_track_v(b)>=4 then color 15,0
         if e_track_v(b)=3 then color 11,0
         if e_track_v(b)=2 then color 9,0
-        if e_track_v(b)=1 then color 1,0
-        if distance(e_track_p(b),defender.c)<=senbat*(senac+1) and e_track_v(b)>0 then print "*";
+        if e_track_v(b)=1 then color 1,0 
+        if distance(e_track_p(b),defender.c)<=senbat*(senac+1) and e_track_v(b)>0 then draw string(e_track_p(b).x*_fw1,e_track_p(b).y*_fh1),"*",,font1,custom,@_col 
         e_track_v(b)=e_track_v(b)-1
     next
     
@@ -507,7 +483,7 @@ function com_display(defender as _ship, attacker() as _ship, lastenemy as short,
         for b=1 to mines_last
             locate mines_p(b).y+1,mines_p(b).x+1,0
             color 0,0
-            print " ";
+            draw string(mines_p(b).x*_fw1,mines_p(b).y*_fh1)," ",,font1,custom,@_col
             locate mines_p(b).y+1,mines_p(b).x+1,0
             if b+lastenemy=marked then 
                 color 8,11
@@ -515,7 +491,7 @@ function com_display(defender as _ship, attacker() as _ship, lastenemy as short,
                 color 8,0
             endif
             if distance(mines_p(b),defender.c)<senbat*(senac+1) then 
-                print "ö";
+                draw string(mines_p(b).x*_fw1,mines_p(b).y*_fh1),"ö",,font1,custom,@_col
                 denemy+=1
             endif
         next
@@ -529,27 +505,24 @@ function com_display(defender as _ship, attacker() as _ship, lastenemy as short,
             else
                 color attacker(b).col,attacker(b).bcol
             endif
-            locate attacker(b).c.y+1,attacker(b).c.x+1
             if distance(attacker(b).c,defender.c)<senbat*senac then
                 denemy=denemy+1
-                print "?"
+                draw string(attacker(b).c.x*_fw1,attacker(b).c.y*_fh1),"?",,font1,custom,@_col
             endif
-            if distance(attacker(b).c,defender.c)<=senbat1*senac or distance(attacker(b).c,defender.c)<=sqr(2) then
+            if distance(attacker(b).c,defender.c)<=senbat1*senac or distance(attacker(b).c,defender.c)<=sqr(2) or show_enemyships=1 then
                 locate attacker(b).c.y+1,attacker(b).c.x+1
-                print attacker(b).icon
+                draw string(attacker(b).c.x*_fw1,attacker(b).c.y*_fh1),attacker(b).icon,,font1,custom,@_col
             endif
         else
             b=list_e(c)
             if c=marked then
                 color 0,7
-                locate mines_p(b).y+1,mines_p(b).x+1,0
-                print "ö";
+                draw string(mines_p(b).x*_fw1,mines_p(b).y*_fh1),"ö",,font1,custom,@_col
             endif
         endif
     next 
     color _shipcolor,0
-    locate defender.c.y+1,defender.c.x+1
-    print "@"
+    draw string(defender.c.x*_fw1,defender.c.y*_fh1),"@",,font1,custom,@_col
     return denemy
 end function
 
@@ -663,9 +636,7 @@ function com_fire(target as _ship, attacker as _ship, w as _weap, gunner as shor
                 else
                     dprint "It missed."
                 endif
-                locEOL
-                locate csrlin,pos+1
-                no_key=cursor(target.c,0,1)
+                no_key=keyin
             endif
         endif
         ROF-=1
@@ -710,15 +681,15 @@ function com_hit(target as _ship, w as _weap,dambonus as short, range as short, 
                 dprint w.desig &", " & text
             endif
         endif
+        text=""
+        no_key=keyin
     endif
     if target.shield=0 and w.p>0 then text=w.desig &" fired, "&desig &" is hit, shields are down!"
     if target.shield=0 and w.p<0 then text=w.desig &" "&desig &" is hit, shields are down!"
     if target.shield>0 and w.p>0 then text=w.desig &" fired, "&desig &" is hit, but shields hold!"
     if target.shield>0 and w.p<0 then text=w.desig &" "&desig &" is hit, but shields hold!"
     dprint text
-    locEOL
-    locate csrlin,pos+1
-    no_key=cursor(target.c,0,1)
+    if text<>"" then no_key=keyin
     if target.shield<0 then target.shield=0
     return target
 end function
@@ -809,14 +780,12 @@ function com_detonatemine(d as short,mines_p() as _cords, mines_v() as short, by
                 p.y=y
                 dis=distance(p,mines_p(d))
                 if dis<=r and t>dis and p.x>=0 and p.y>=0 and p.x<=60 and p.y<=20 then
-                    locate p.y+1,p.x+1,0
                     color 242+dis,0
-                    print "*";
+                    draw string(p.x*_fw1,p.y*_fh1),"*",,font1,custom,@_col
                 else
                     if p.x>=0 and p.y>=0 and p.x<=60 and p.y<=20 then
-                        locate p.y+1,p.x+1,0
                         color 0,0
-                        print " ";
+                        draw string(p.x*_fw1,p.y*_fh1)," ",,font1,custom,@_col
                     endif
                 endif
             next
@@ -831,14 +800,12 @@ function com_detonatemine(d as short,mines_p() as _cords, mines_v() as short, by
                 p.y=y
                 dis=distance(p,mines_p(d))
                 if dis<=r and t>dis and p.x>=0 and p.y>=0 and p.x<=60 and p.y<=20 then
-                    locate p.y+1,p.x+1,0
                     color 242+dis
-                    print "*";
+                    draw string(p.x*_fw1,p.y*_fh1),"*",,font1,custom,@_col
                 else
                     if p.x>=0 and p.y>=0 and p.x<=60 and p.y<=20 then
-                        locate p.y+1,p.x+1,0
                         color 0,0
-                        print " ";
+                        draw string(p.x*_fw1,p.y*_fh1)," ",,font1,custom,@_col
                     endif
                 endif
             next
@@ -861,9 +828,7 @@ function com_detonatemine(d as short,mines_p() as _cords, mines_v() as short, by
                 defender.piratekills=defender.piratekills+attacker(a).money
                 lastenemy=com_remove(attacker(),a,lastenemy)
                 t=0
-                locEOL
-                locate csrlin,pos+1
-                no_key=cursor(defender.c,0,1)
+                no_key=keyin
             endif
         endif
     next
