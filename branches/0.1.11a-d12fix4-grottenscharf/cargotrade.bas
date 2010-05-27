@@ -52,15 +52,15 @@ function drawroulettetable() as short
             endif
             if z<10 then
                 if x<3 then
-                    draw string ((x*3+45)*_fw2,(y+2)*_fh2)," "&z &" ",,font2,custom,@_col
+                    print " "&z &" ";
                 else
-                    draw string ((x*3+45)*_fw2,(y+2)*_fh2)," "&z,,font2,custom,@_col
+                    print " "&z
                 endif
             else
                 if x<3 then
-                    draw string ((x*3+45)*_fw2,(y+2)*_fh2),z &" ",,font2,custom,@_col
+                    print z &" ";
                 else
-                    draw string ((x*3+45)*_fw2,(y+2)*_fh2),""&z ,,font2,custom,@_col
+                    print using "##";z
                 endif
             endif
         next
@@ -987,16 +987,22 @@ function sickbay(st as short=0) as short
                 dprint ""
                 b=menu("Augments/"&augn(0)&"Exit","/"&augd(0))
                 if b>0 and b<7 then
-                    if askyn("Do you want to buy "&augn(b) &" for the whole crew?(y/n)") then
-                        if crew(6).hpmax>0 then
-                            c=6
-                        else
-                            c=1
-                        endif
-                        c2=0
+                    if askyn("Do you want to buy "&augn(b) &" for the whole crew (including officers)?(y/n)") then
+                        if crew(1).hpmax>0 then c=1
+                            c2=0
                     else
-                        c=showteam(0,1)
-                        c2=1
+                        if askyn("Do you want to buy "&augn(b) &" for the whole crew but the officers?(y/n)") then
+                            if crew(6).hpmax>0 then
+                                c=6
+                                c2=0
+                            else
+                                c=1
+                                c2=0
+                            endif
+                        else
+                            c=showteam(0,1)
+                            c2=1
+                        endif
                     endif
                     do
                         if crew(c).typ<=9 and b>0 and c>0 then
@@ -1545,9 +1551,9 @@ function stockmarket(st as short) as short
         displayship
         color 15,0
         locate 2,2
-        draw string(2*_fw1,2*_fh1), "Company",,font2,custom,@_col
+        print "Company"
         locate 2,30
-        draw string(2*_fw1+28*_fw2,2*_fh1), "Price",,font2,custom,@_col
+        print "Price"
         color 11,0
         text="Company" &space(18) &"Price"
         last=0
@@ -1557,10 +1563,10 @@ function stockmarket(st as short) as short
                 last+=1
                 locate 2+last,2
                 cn(last)=basis(a).company
-                draw string(2*_fw1,2*_fh1+last*_fh2), companyname(basis(a).company),,font2,custom,@_col
+                print companyname(basis(a).company)
                 text=text &"/"& companyname(basis(a).company)
                 locate 2+last,30
-                draw string(2*_fw1+28*_fw2,2*_fh1+last*_fh2), ""&companystats(basis(a).company).rate,,font2,custom,@_col
+                print companystats(basis(a).company).rate
                 text=text &space(32-len(companyname(basis(a).company)))&companystats(basis(a).company).rate 
             endif
             dis(basis(a).company)=1
@@ -1631,21 +1637,21 @@ function getsharetype() as short
     return -1
 end function
 
-function portfolio(x as short,y2 as short) as short
+function portfolio(x as short,y as short) as short
     dim n(4) as integer
-    dim as short a,y
+    dim a as short
     for a=0 to lastshare
         n(shares(a).company)+=1
     next
     locate y,x
     color 15,0
-    draw string(x*_fw1,y2*_fh1), "Portfolio:",,font2,custom,@_col
+    print "Portfolio:"
     color 11,0
-    y=1
+    y+=1
     for a=1 to 4
         if n(a)>0 then 
             locate y,x
-            draw string(x*_fw1,y2*_fh1+y*_fh2), companyname(a) &": "& n(a),,font2,custom,@_col
+            print companyname(a) &": "& n(a)
             y+=1
         endif
     next
@@ -1929,7 +1935,18 @@ sub buygoods(st as short)
     text=stationgoods(st)
         cls
         displayship
-        displaywares(st)
+            
+        color 15,0 
+        locate 2,2
+        print "Wares"
+        locate 2,24
+        print "Price"
+        locate 2,35
+        print "Qut."
+        locate 3,20
+        print "Buy"
+        locate 3,28
+        print "Sell"
         c=menu(text,"",2,3)
         if c<9 then
             
@@ -2010,31 +2027,29 @@ end sub
 
 function displaywares(st as short) as short
     dim a as short
-    dim t as string
+    
     color 15,0 
-    draw string (2*_fw1,2*_fh1),"Wares",,font2,custom,@_col
-    draw string (2*_fw1+22*_fw2,2*_fh1),"Price",,font2,custom,@_col
-    draw string (2*_fw1+35*_fw2,2*_fh1),"Qut.",,font2,custom,@_col
-    draw string (2*_fw1+17*_fw2,2*_fh1+_fh2),"Buy",,font2,custom,@_col
-    draw string (2*_fw1+25*_fw2,2*_fh1+_fh2),"Sell",,font2,custom,@_col
+    locate 2,2
+    print "Wares"
+    locate 2,24
+    print "Price"
+    locate 2,35
+    print "Qut."
+    locate 3,20
+    print "Buy"
+    locate 3,28
+    print "Sell"
     for a=1 to 8
         color 11,0
-        draw string(2*_fw1+0*_fw2,3*_fh1+a*_fh2),basis(st).inv(a).n,,font2,custom,@_col
-        t=""
-        if basis(st).inv(a).p<1000 then t=t &" "
-        if basis(st).inv(a).p<100 then t=t &" "
-        if basis(st).inv(a).p<10 then t=t &" "
-        draw string(2*_fw1+18*_fw2,3*_fh1+a*_fh2),t & basis(st).inv(a).p,,font2,custom,@_col
-        t=""
-        if cint(basis(st).inv(a).p*.8+addtalent(1,6,.01))<1000 then t=t &" "
-        if cint(basis(st).inv(a).p*.8+addtalent(1,6,.01))<100 then t=t &" "
-        if cint(basis(st).inv(a).p*.8+addtalent(1,6,.01))<10 then t=t &" "
-        draw string(2*_fw1+26*_fw2,3*_fh1+a*_fh2),t &cint(basis(st).inv(a).p*.8+addtalent(1,6,.01)),,font2,custom,@_col
-        if basis(st).inv(a).v<10 then
-            draw string(2*_fw1+34*_fw2,3*_fh1+a*_fh2)," "& basis(st).inv(a).v,,font2,custom,@_col
-        else
-            draw string(2*_fw1+34*_fw2,3*_fh1+a*_fh2),""& basis(st).inv(a).v,,font2,custom,@_col
-        endif
+        locate 3+a,2
+        print basis(st).inv(a).n
+        locate 3+a,20
+        print using"####"; basis(st).inv(a).p
+        locate 3+a,28
+        print using"####";cint(basis(st).inv(a).p*.8+addtalent(1,6,.01))
+        locate 3+a,36
+        print using "##";basis(st).inv(a).v
+        
     next
     return 0
 end function
@@ -2287,7 +2302,6 @@ function paystuff(price as integer) as integer
         dprint "you dont have enough money"
     else
         player.money=player.money-price
-        displayship()
         r=-1
     endif
     return r
