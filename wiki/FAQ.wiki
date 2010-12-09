@@ -1,6 +1,11 @@
 #labels Featured
 FAQ for prospector. Feel free to add any Fs, i will try to provide the As.
 
+== General ==
+*Q: What are the system requirements*
+
+A: Being a roguelike, Prospector isnt using lots of resources. Current and not very old computers should be able to handle it without any problems.
+
 == Basic howtos ==
 
 *Q: What are the o o o thingies under my ship supposed to mean?*
